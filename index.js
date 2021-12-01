@@ -3,6 +3,7 @@ const app = express();
 const axios = require("axios");
 const cors = require("cors");
 app.use(cors());
+require("dotenv").config();
 
 app.get("/", async (req, res) => {
   try {
@@ -17,4 +18,4 @@ app.get("/", async (req, res) => {
     console.log(err);
   }
 });
-app.listen(4000);
+app.listen(process.env.PORT || 4000);
